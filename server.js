@@ -1,8 +1,7 @@
-const log = require('./logger') (module);
+const log = require('./logger')(module);
 const db = require('./db');
 db.connect();  //кэшируется и становится доступен в user
 
-console.log('\nПисун servera')
 const user = require('./user');
 //  require('./global');
 
@@ -12,7 +11,7 @@ function run() {
     //const petya = new User('Петя');
 
     petya.Hello(vasya);
-    log('Run succesful');
+    log(db.getPhrase('Run succesful'));
 };
 
 if(module.parent) {
@@ -22,4 +21,3 @@ if(module.parent) {
     run();
     console.log('run()');
 };
-console.log('\nПисун servera')
